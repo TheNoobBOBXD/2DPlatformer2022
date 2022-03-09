@@ -73,3 +73,8 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	velocity  = move_and_slide(velocity, Vector2.UP)
 	
+
+
+func _on_HitBox_area_entered(area):
+	if area.is_in_group("Death"):
+		print("Dead") # Replace with function body.

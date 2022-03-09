@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/tileset.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/SwingingTrap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/FastSwingingTrap.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 195.75, 10 )
@@ -222,6 +223,9 @@ smoothing_enabled = true
 drag_margin_left = 0.08
 drag_margin_right = 0.08
 script = ExtResource( 3 )
+
+[node name="FastSwingingTrap" parent="." instance=ExtResource( 5 )]
+position = Vector2( 138, -144 )
 
 [node name="SwingingTrap" parent="." instance=ExtResource( 4 )]
 position = Vector2( 264, -144 )
