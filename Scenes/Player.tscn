@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 7.25 )
+extents = Vector2( 5.5, 7.5 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -125,7 +125,7 @@ tracks/0/keys = {
 
 [sub_resource type="CapsuleShape2D" id=9]
 radius = 5.0
-height = 0.0
+height = 2.0
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -137,7 +137,7 @@ vframes = 15
 frame = 40
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 0.75 )
+position = Vector2( -0.5, 0.5 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
