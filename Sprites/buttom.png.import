@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/buttom.png-44d82d4c7de8884373645a28fbeb72c3.stex"
+path="res://.import/buttom.png-321f8a96ef559afbec6c471bbea10f22.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/FolderofDownloads/platform_metroidvania asset pack v1.01/miscellaneous sprites/buttom.png"
-dest_files=[ "res://.import/buttom.png-44d82d4c7de8884373645a28fbeb72c3.stex" ]
+source_file="res://Sprites/buttom.png"
+dest_files=[ "res://.import/buttom.png-321f8a96ef559afbec6c471bbea10f22.stex" ]
 
 [params]
 

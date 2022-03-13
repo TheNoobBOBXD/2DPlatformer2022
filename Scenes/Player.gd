@@ -78,3 +78,6 @@ func _physics_process(delta):
 func _on_HitBox_area_entered(area):
 	if area.is_in_group("Death"):
 		print("L") # Replace with function body.
+#
+#
+	
