@@ -3,8 +3,9 @@
 [ext_resource path="res://Sprites/herochar_spritesheet(new).png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 5.25, 7 )
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 5.25
+height = 3.5
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"

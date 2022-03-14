@@ -21,7 +21,7 @@ func _input(event):
 func _process(delta):
 	if zoomed:
 		zoom = Vector2(0.3,0.3)
-#		zoom.move_toward(Vector2(0.3,0.3),0.03)
+		#zoom.move_toward(Vector2(0.3,0.3),0.03)
 		position = position.move_toward(target.global_position, 70)
 	else:
 		zoom = Vector2(1,1)
