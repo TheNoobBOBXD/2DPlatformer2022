@@ -275,7 +275,7 @@ rotation = 3.14159
 [node name="DoorAndButton" parent="." instance=ExtResource( 7 )]
 position = Vector2( -136, 22 )
 
-[node name="Button" parent="DoorAndButton" index="0"]
+[node name="Button" parent="DoorAndButton" index="2"]
 position = Vector2( -81, 22 )
 
 [node name="SpinningBlade" parent="." instance=ExtResource( 8 )]

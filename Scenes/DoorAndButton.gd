@@ -1,15 +1,22 @@
 extends Node2D
 
+var doorclosed = true
 
 func _ready():
-	$AnimationPlayer.play("ButtonUp")
+	$ButtonAnimationPlayer.play("ButtonUp")
 	$AnimationPlayer.play("DoorClosed")
 	
 
 
 func _on_Area2D_body_entered(body):
-	if body.is_in_group("Player"):
-		print("yes")
-		$AnimationPlayer.play("ButtonDown")
+	if body.is_in_group("Player") and doorclosed == true:
+		print("open")
+		$ButtonAnimationPlayer.play("ButtonDown")
 		$AnimationPlayer.play("DoorOpen")
-#
+		doorclosed = false
+#		yield($AnimationPlayer,"animation_finished")
+	if body.is_in_group("Player") and doorclosed == false:
+		$ButtonAnimationPlayer.play("ButtonDown")
+
+
+
