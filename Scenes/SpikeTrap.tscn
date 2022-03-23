@@ -79,4 +79,5 @@ frame = 1
 anims/RESET = SubResource( 2 )
 anims/spiketrigger = SubResource( 3 )
 
+[connection signal="body_entered" from="." to="." method="_on_SpikeTrap_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
