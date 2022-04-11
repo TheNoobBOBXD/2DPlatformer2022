@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/trap_spikes_anim_strip_7.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/SpikeTrap.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -64,7 +63,6 @@ tracks/1/keys = {
 }
 
 [node name="SpikeTrap" type="Area2D" groups=["Death"]]
-script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -76,8 +74,6 @@ hframes = 7
 frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "spiketrigger"
 anims/RESET = SubResource( 2 )
 anims/spiketrigger = SubResource( 3 )
-
-[connection signal="body_entered" from="." to="." method="_on_SpikeTrap_body_entered"]
-[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]

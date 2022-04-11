@@ -8,3 +8,5 @@ func _process(delta):
 		GameStats.reset()
 	$CanvasLayer/Control/Label.text = GameStats.get_time()
 
+func _on_Area2D_body_entered(body):
+	pass
