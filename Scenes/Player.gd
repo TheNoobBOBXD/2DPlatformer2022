@@ -10,10 +10,11 @@ var velocity = Vector2.ZERO
 export (float) var friction = 10
 export (float) var acceleration = 25
 
-enum state {IDLE, RUNNING, PUSHING, ROLLING, JUMP, STARTJUMP, FALL}
+enum state {IDLE, RUNNING, PUSHING, ROLLING, JUMP, STARTJUMP, FALL, WALLJUMP}
 
 onready var player_state = state.IDLE
- 
+var dir
+
 func _ready():
 	$AnimationPlayer.play("Idle")
 	pass
@@ -36,17 +37,20 @@ func upadate_animation(anim):
 			$AnimationPlayer.play("pushing")
 		state.RUNNING:
 			$AnimationPlayer.play("Running")
-	
 	pass
 
-func handle_state(player_state):
+func handle_state(player_state,dir):
 	match(player_state):
 		state.STARTJUMP:
 			velocity.y = jump_speed
+		state.WALLJUMP:
+			print("wall jum[]")
+			velocity.y = jump_speed /2 
+			velocity.x = -dir * speed *3
 	pass
 
 func get_input():
-	var dir = Input.get_action_strength("right") - Input.get_action_strength("left")
+	dir = Input.get_action_strength("right") - Input.get_action_strength("left")
 	if dir != 0:
 		velocity.x = move_toward(velocity.x, dir*speed, acceleration)
 	else:
@@ -61,13 +65,17 @@ func _physics_process(delta):
 	elif velocity.x != 0:
 		player_state = state.RUNNING
 	
-	if not is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor():
+		print("jump")
+		player_state = state.WALLJUMP
+	
+	if not is_on_floor() and player_state != state.WALLJUMP:
 		if velocity.y < 0:
 			player_state = state.JUMP
 		if velocity.y > 0:
 			player_state = state.FALL
 
-	handle_state(player_state)
+	handle_state(player_state,dir)
 	upadate_animation(player_state)
 #set gravity
 	velocity.y += gravity * delta
