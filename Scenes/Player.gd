@@ -45,8 +45,8 @@ func handle_state(player_state,dir):
 			velocity.y = jump_speed
 		state.WALLJUMP:
 			print("wall jum[]")
-			velocity.y = jump_speed /2 
-			velocity.x = -dir * speed *3
+			velocity.y = jump_speed *0.8
+			velocity.x = -dir * speed * 2
 	pass
 
 func get_input():
