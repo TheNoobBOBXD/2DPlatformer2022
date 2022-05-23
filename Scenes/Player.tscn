@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Sprites/herochar_spritesheet(new).png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
@@ -71,6 +71,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 8, 9, 10, 11, 12, 13 ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "death"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -154,6 +171,9 @@ animation = "Rolling"
 [sub_resource type="AnimationNodeAnimation" id=12]
 animation = "Running"
 
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "death"
+
 [sub_resource type="AnimationNodeAnimation" id=13]
 animation = "fall"
 
@@ -165,6 +185,12 @@ animation = "pushing"
 
 [sub_resource type="AnimationNodeAnimation" id=16]
 animation = "roll"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=17]
 
@@ -183,22 +209,25 @@ animation = "roll"
 [sub_resource type="AnimationNodeStateMachineTransition" id=24]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=27]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=28]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=31]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=32]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id=25]
 states/Idle/node = SubResource( 11 )
-states/Idle/position = Vector2( 329, 242 )
+states/Idle/position = Vector2( 332, 243 )
 states/Rolling/node = SubResource( 30 )
-states/Rolling/position = Vector2( 30.7155, 216.936 )
+states/Rolling/position = Vector2( -38.2845, 185.936 )
 states/Running/node = SubResource( 12 )
-states/Running/position = Vector2( 422, 132 )
+states/Running/position = Vector2( 476, 132 )
+states/death/node = SubResource( 35 )
+states/death/position = Vector2( 677.715, 146.936 )
 states/fall/node = SubResource( 13 )
 states/fall/position = Vector2( 251, 324 )
 states/jump/node = SubResource( 14 )
@@ -206,10 +235,10 @@ states/jump/position = Vector2( 251, 132 )
 states/pushing/node = SubResource( 15 )
 states/pushing/position = Vector2( 936, 122 )
 states/roll/node = SubResource( 16 )
-states/roll/position = Vector2( 603, 265 )
-transitions = [ "Idle", "Running", SubResource( 17 ), "Idle", "fall", SubResource( 18 ), "Idle", "jump", SubResource( 19 ), "Idle", "roll", SubResource( 20 ), "Running", "Idle", SubResource( 21 ), "jump", "Idle", SubResource( 22 ), "fall", "Idle", SubResource( 23 ), "roll", "Idle", SubResource( 24 ), "jump", "roll", SubResource( 27 ), "fall", "roll", SubResource( 28 ), "Idle", "Rolling", SubResource( 31 ), "Rolling", "Idle", SubResource( 32 ) ]
+states/roll/position = Vector2( 854, 269 )
+transitions = [ "jump", "roll", SubResource( 27 ), "fall", "roll", SubResource( 28 ), "Running", "Rolling", SubResource( 33 ), "Idle", "Running", SubResource( 17 ), "Idle", "fall", SubResource( 18 ), "Idle", "jump", SubResource( 19 ), "Idle", "roll", SubResource( 20 ), "Running", "Idle", SubResource( 21 ), "jump", "Idle", SubResource( 22 ), "fall", "Idle", SubResource( 23 ), "roll", "Idle", SubResource( 24 ), "Idle", "Rolling", SubResource( 31 ), "Rolling", "Idle", SubResource( 32 ), "Idle", "death", SubResource( 36 ), "death", "Idle", SubResource( 37 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -215.285, 103.936 )
+graph_offset = Vector2( -123.285, 113.936 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=26]
 
@@ -232,6 +261,7 @@ anims/Idle = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 anims/Rolling = SubResource( 29 )
 anims/Running = SubResource( 4 )
+anims/death = SubResource( 34 )
 anims/fall = SubResource( 5 )
 anims/jump = SubResource( 6 )
 anims/pushing = SubResource( 7 )

@@ -16,7 +16,7 @@ var max_num_wall_jumps = 2
 export (float) var friction = 10
 export (float) var acceleration = 25
 
-enum state {IDLE, RUNNING, PUSHING, ROLLING, JUMP, STARTJUMP, FALL, WALLJUMP, DOUBLEJUMP, ROLL}
+enum state {IDLE, RUNNING, PUSHING, ROLLING, JUMP, STARTJUMP, FALL, WALLJUMP, DOUBLEJUMP, ROLL, DEATH}
 
 onready var player_state = state.IDLE
 var dir
@@ -44,6 +44,8 @@ func upadate_animation(anim):
 			animator.travel("roll")
 		state.ROLLING:
 			animator.travel("Rolling")
+		state.DEATH:
+			animator.travel("death")
 
 
 func handle_state(player_state,dir):
@@ -66,15 +68,14 @@ func get_input():
 		velocity.x = move_toward(velocity.x, dir*speed, acceleration)
 	else:
 		velocity.x = move_toward(velocity.x, 0 , friction)
-
+	
 
 func _physics_process(delta):
 	get_input()
 	if velocity == Vector2.ZERO:
 		player_state = state.IDLE
 	
-	if Input.is_action_just_pressed("Down"):
-		player_state = state.ROLLING
+	
 	##NEXT SECTION
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		player_state = state.STARTJUMP
@@ -102,8 +103,12 @@ func _physics_process(delta):
 			player_state = state.FALL
 
 	elif velocity.x != 0:
-		print("run")
-		player_state = state.RUNNING
+		if Input.is_action_just_pressed("Down") and is_on_floor():
+			player_state = state.ROLLING
+			print("roll")
+		else:
+			print("run")
+			player_state = state.RUNNING
 
 	handle_state(player_state,dir)
 	upadate_animation(player_state)
@@ -115,10 +120,10 @@ func _physics_process(delta):
 
 func _on_HitBox_area_entered(area):
 	if area.is_in_group("Death"):
+		player_state = state.DEATH
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
 		print("L") # Replace with function body.
-#		
-#
+	
 	
 
