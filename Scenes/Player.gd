@@ -7,16 +7,21 @@ export (int) var slide_speed = 400
 
 var velocity = Vector2.ZERO
 
+onready var animator = $AnimationTree.get("parameters/playback")
+
+var dub_jumps = 0
+var wall_jumps = 0
+var max_num_dub_jumps = 1
+var max_num_wall_jumps = 2
 export (float) var friction = 10
 export (float) var acceleration = 25
 
-enum state {IDLE, RUNNING, PUSHING, ROLLING, JUMP, STARTJUMP, FALL, WALLJUMP}
+enum state {IDLE, RUNNING, PUSHING, ROLLING, JUMP, STARTJUMP, FALL, WALLJUMP, DOUBLEJUMP, ROLL}
 
 onready var player_state = state.IDLE
 var dir
 
 func _ready():
-	$AnimationPlayer.play("Idle")
 	pass
 
 func upadate_animation(anim):
@@ -26,25 +31,31 @@ func upadate_animation(anim):
 		$Sprite.flip_h = false
 	match(anim):
 		state.FALL:
-			$AnimationPlayer.play("fall")
-		state.ROLLING:
-			$AnimationPlayer.play("roll")
+			animator.travel("fall")
 		state.IDLE:
-			$AnimationPlayer.play("Idle")
+			animator.travel("Idle")
 		state.JUMP:
-			$AnimationPlayer.play("jump")
+			animator.travel("jump")
 		state.PUSHING:
-			$AnimationPlayer.play("pushing")
+			animator.travel("pushing")
 		state.RUNNING:
-			$AnimationPlayer.play("Running")
-	pass
+			animator.travel("Running")
+		state.DOUBLEJUMP:
+			animator.travel("roll")
+		state.ROLLING:
+			animator.travel("Rolling")
+
 
 func handle_state(player_state,dir):
 	match(player_state):
 		state.STARTJUMP:
 			velocity.y = jump_speed
+		state.DOUBLEJUMP:
+			velocity.y = jump_speed * 1.1
+		state.ROLLING:
+			velocity.x = dir * speed * 2
 		state.WALLJUMP:
-			print("wall jum[]")
+			print("wall jump")
 			velocity.y = jump_speed *0.8
 			velocity.x = -dir * speed * 2
 	pass
@@ -56,24 +67,43 @@ func get_input():
 	else:
 		velocity.x = move_toward(velocity.x, 0 , friction)
 
+
 func _physics_process(delta):
 	get_input()
 	if velocity == Vector2.ZERO:
 		player_state = state.IDLE
+	
+	if Input.is_action_just_pressed("Down"):
+		player_state = state.ROLLING
+	##NEXT SECTION
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		player_state = state.STARTJUMP
-	elif velocity.x != 0:
-		player_state = state.RUNNING
+		dub_jumps = max_num_dub_jumps
+		wall_jumps = max_num_wall_jumps
+		print("jump1")
 	
-	if Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor():
+	
+	elif Input.is_action_just_pressed("jump") and not is_on_floor() and not is_on_wall() and dub_jumps > 0:
+			print("dubjump")
+			dub_jumps = dub_jumps - 1
+			player_state = state.DOUBLEJUMP
+	
+	#NEXT BLOCK
+	elif Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor() and wall_jumps >0:
 		print("jump")
+		wall_jumps = wall_jumps - 1
 		player_state = state.WALLJUMP
-	
-	if not is_on_floor() and player_state != state.WALLJUMP:
+		
+	#NEXT BLOCK
+	elif not is_on_floor() and player_state != state.WALLJUMP:
 		if velocity.y < 0:
 			player_state = state.JUMP
 		if velocity.y > 0:
 			player_state = state.FALL
+
+	elif velocity.x != 0:
+		print("run")
+		player_state = state.RUNNING
 
 	handle_state(player_state,dir)
 	upadate_animation(player_state)
@@ -91,3 +121,4 @@ func _on_HitBox_area_entered(area):
 #		
 #
 	
+
