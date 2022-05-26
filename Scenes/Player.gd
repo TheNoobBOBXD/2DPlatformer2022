@@ -55,7 +55,7 @@ func handle_state(player_state,dir):
 		state.DOUBLEJUMP:
 			velocity.y = jump_speed * 1.1
 		state.ROLLING:
-			velocity.x = dir * speed * 2
+			velocity.x =  dir * acceleration*10
 		state.WALLJUMP:
 			print("wall jump")
 			velocity.y = jump_speed *0.8
@@ -106,6 +106,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("Down") and is_on_floor():
 			player_state = state.ROLLING
 			print("roll")
+			pass
 		else:
 			print("run")
 			player_state = state.RUNNING
