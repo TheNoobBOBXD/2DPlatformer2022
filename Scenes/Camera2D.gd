@@ -11,7 +11,7 @@ func _input(event):
 	
 	if event is InputEventKey and event.pressed:
 		if event.scancode != KEY_ENTER: #basically if any key is pressed, it'll zoom in onto the player
-			target = owner.get_node("Player")
+			target = owner.get_node("Player2")
 			zoomed = true
 		else:
 			target = null

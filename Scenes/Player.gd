@@ -40,8 +40,8 @@ func upadate_animation(anim):
 			animator.travel("pushing")
 		state.RUNNING:
 			animator.travel("Running")
-		state.DOUBLEJUMP:
-			animator.travel("roll")
+#		state.DOUBLEJUMP:
+#			animator.travel("roll")
 		state.ROLLING:
 			animator.travel("Rolling")
 		state.DEATH:
@@ -62,6 +62,7 @@ func handle_state(player_state,dir):
 			velocity.x = -dir * speed * 2
 	pass
 
+
 func get_input():
 	dir = Input.get_action_strength("right") - Input.get_action_strength("left")
 	if dir != 0:
@@ -74,7 +75,7 @@ func _physics_process(delta):
 	get_input()
 	if velocity == Vector2.ZERO:
 		player_state = state.IDLE
-	
+		
 	
 	##NEXT SECTION
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -88,6 +89,12 @@ func _physics_process(delta):
 			print("dubjump")
 			dub_jumps = dub_jumps - 1
 			player_state = state.DOUBLEJUMP
+			var c = load("res://Scenes/CloufPuff.tscn").instance()
+			get_parent().add_child(c)
+			c.global_position = global_position
+			c.global_position.y +=5
+			
+			c.emitting = true
 	
 	#NEXT BLOCK
 	elif Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor() and wall_jumps >0:
@@ -106,7 +113,6 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("Down") and is_on_floor():
 			player_state = state.ROLLING
 			print("roll")
-			pass
 		else:
 			print("run")
 			player_state = state.RUNNING

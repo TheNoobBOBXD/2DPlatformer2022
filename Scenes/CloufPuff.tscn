@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://New Piskel (1).png" type="Texture" id=1]
+[ext_resource path="res://Scenes/CloufPuff.gd" type="Script" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.430939, 0.685083, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.856354, 1, 1, 1, 0.473904, 1, 1, 1, 0 )
+
+[node name="CloudPuff" type="CPUParticles2D"]
+rotation = 1.5708
+scale = Vector2( 0.4, 0.4 )
+emitting = false
+amount = 3
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource( 1 )
+flag_align_y = true
+gravity = Vector2( 0, 0 )
+initial_velocity = 55.05
+orbit_velocity_random = 0.31
+angle_random = 1.0
+color_ramp = SubResource( 1 )
+script = ExtResource( 2 )
