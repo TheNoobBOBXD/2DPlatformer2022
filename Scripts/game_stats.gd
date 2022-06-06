@@ -3,6 +3,7 @@ extends Node
 onready var game_start_time = OS.get_ticks_msec()
 var current_spawn = null
 
+
 func reset():
 	current_spawn = null
 	get_tree().reload_current_scene()

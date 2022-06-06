@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=2]
 
-[ext_resource path="res://HeckinDoggoPupper.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/HeckinDoggoPupper.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=10]

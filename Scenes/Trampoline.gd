@@ -14,8 +14,10 @@ func _on_Area2D_body_entered(body):
 		$AnimationPlayer.play("Bounce")
 		not_pressed = false
 		body.velocity.y = -240
-		
+		body.dub_jumps = body.max_num_dub_jumps
+		body.wall_jumps = body.max_num_wall_jumps
 		yield($AnimationPlayer,"animation_finished")
+		
 
 
 

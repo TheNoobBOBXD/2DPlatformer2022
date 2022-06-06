@@ -12,7 +12,6 @@ config_version=4
 
 config/name="2dPlatformer"
 run/main_scene="res://Scenes/World.tscn"
-config/icon="res://icon.png"
 
 [autoload]
 

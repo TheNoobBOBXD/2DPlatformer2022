@@ -9,6 +9,7 @@ var velocity = Vector2.ZERO
 
 onready var animator = $AnimationTree.get("parameters/playback")
 
+
 var dub_jumps = 0
 var wall_jumps = 0
 var max_num_dub_jumps = 1
@@ -95,7 +96,6 @@ func _physics_process(delta):
 			c.global_position.y +=5
 			
 			c.emitting = true
-	
 	#NEXT BLOCK
 	elif Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor() and wall_jumps >0:
 		print("jump")
