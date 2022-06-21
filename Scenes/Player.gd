@@ -131,6 +131,10 @@ func _on_HitBox_area_entered(area):
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
 		print("L") # Replace with function body.
+		player_state = state.IDLE 
+		velocity.y = 0
+		velocity.x = 0
+		
 	
 	
 

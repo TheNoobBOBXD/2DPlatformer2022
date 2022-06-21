@@ -7,7 +7,7 @@
 [ext_resource path="res://Sprites/Water Animation/png/1x/image 10.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Water Animation/png/1x/image 11.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Water Animation/png/1x/image 14.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Water Animation/png/1x/image 1.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/1.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Water Animation/png/1x/image 4.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Water Animation/png/1x/image 6.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Water Animation/png/1x/image 3.png" type="Texture" id=11]
@@ -21,7 +21,7 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -30,19 +30,316 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64, 55.5 )
 
-[node name="Water" type="Node2D"]
+[node name="Water" type="Node2D" groups=["Death"]]
 script = ExtResource( 18 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 192, 0 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 frame = 12
-speed_scale = 8.0
+speed_scale = 3.0
 playing = true
 
-[node name="Area2D" type="Area2D" parent="AnimatedSprite"]
+[node name="Area2D" type="Area2D" parent="AnimatedSprite4" groups=["Death"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite4/Area2D"]
 position = Vector2( 0, 8.5 )
 shape = SubResource( 2 )
 
-[connection signal="body_entered" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_body_entered"]
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 256, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite5" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite5/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 320, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite6" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite6/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 384, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite7" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite7/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 448, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite8" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite8/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 512, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite9" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite9/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 576, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite10" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite10/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite11" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 640, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite11" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite11/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite12" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 704, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite12" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite12/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite13" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 768, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite13" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite13/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite14" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 832, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite14" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite14/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite15" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 896, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite15" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite15/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite16" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 960, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite16" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite16/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite17" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 1024, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite17" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite17/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite18" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 1088, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite18" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite18/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite19" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 1152, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite19" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite19/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite20" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 1216, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite20" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite20/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite21" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 1280, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite21" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite21/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite22" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 1344, 0 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+frame = 12
+speed_scale = 3.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite22" groups=["Death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite22/Area2D"]
+position = Vector2( 0, 8.5 )
+shape = SubResource( 2 )
+
+[node name="1" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 771, 443.5 )
+scale = Vector2( 9.54688, 6.42969 )
+texture = ExtResource( 8 )
+
+[connection signal="body_entered" from="AnimatedSprite4/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite5/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite6/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite7/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite8/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite9/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite10/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite11/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite12/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite13/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite14/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite15/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite16/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite17/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite18/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite19/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite20/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite21/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite22/Area2D" to="." method="_on_Area2D_body_entered"]
