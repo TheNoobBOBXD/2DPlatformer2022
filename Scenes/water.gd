@@ -7,8 +7,7 @@ var move = false
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
-		if event.scancode != KEY_ENTER: #basically if any key is pressed, it'll zoom in onto the player
-
+		if event.scancode != KEY_ENTER: #basically if any key is pressed
 			move = true
 		else:
 			move = false
@@ -19,6 +18,7 @@ func _process(delta):
 		translate(Vector2.UP *0.5 )
 	else:
 		pass
+
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
 		pass 
