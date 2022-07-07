@@ -7,8 +7,7 @@ var timerun = false
 var coin = 0
 
 
-	
-	
+
 func reset():
 	current_spawn = null
 	get_tree().reload_current_scene()
@@ -28,6 +27,7 @@ func set_spawn(spawn):
 
 func get_spawn():
 	return current_spawn 
+
 
 func _input(event):
 	if event is InputEventKey and event.pressed  and timerun == false:

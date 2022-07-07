@@ -2,7 +2,6 @@ extends Node2D
 var dir  = 1
 var speed = 200
 var delta = Vector2()
-
 var move = false
 
 func _input(event):
@@ -21,4 +20,4 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
-		pass 
+		pass

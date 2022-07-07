@@ -130,6 +130,9 @@ func _on_HitBox_area_entered(area):
 		player_state = state.DEATH
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
+			player_state = state.IDLE 
+			velocity.y = 0
+			velocity.x = 0
 		print("L") # Replace with function body.
 		player_state = state.IDLE 
 		velocity.y = 0
