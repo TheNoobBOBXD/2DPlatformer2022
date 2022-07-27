@@ -4,6 +4,7 @@ var speed = 200
 var delta = Vector2()
 var move = false
 
+
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.scancode != KEY_ENTER: #basically if any key is pressed
@@ -18,6 +19,11 @@ func _process(delta):
 	else:
 		pass
 
+func reset_water():
+	position.y = GameStats.water_pos
+	
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
-		pass
+		reset_water()
+		
+		

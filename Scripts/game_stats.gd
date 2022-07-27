@@ -5,7 +5,7 @@ var current_spawn = null
 var current_level = 1
 var timerun = false
 var coin = 0
-
+var water_pos = 0
 
 
 func reset():
@@ -13,9 +13,12 @@ func reset():
 	get_tree().reload_current_scene()
 	game_start_time = OS.get_ticks_msec()
 	
-	
-	
 
+
+func waterpos(pos, water_y):
+	water_pos = max(water_y, pos +100)
+	
+	
 func check_reset():
 	if current_spawn == null:
 		reset()

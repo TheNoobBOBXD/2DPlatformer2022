@@ -38,7 +38,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 192, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -53,7 +53,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 256, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -68,7 +68,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 320, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -83,7 +83,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 384, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -98,7 +98,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 448, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -113,7 +113,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 512, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -128,7 +128,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 576, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -143,7 +143,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 640, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -158,7 +158,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 704, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -173,7 +173,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 768, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -188,7 +188,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 832, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -203,7 +203,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 896, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -218,7 +218,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 960, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -233,7 +233,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 1024, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -248,7 +248,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 1088, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -263,7 +263,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 1152, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -278,7 +278,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 1216, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -293,7 +293,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 1280, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
@@ -308,7 +308,7 @@ modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 1344, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 8
+frame = 6
 speed_scale = 3.0
 playing = true
 
