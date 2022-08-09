@@ -9,7 +9,8 @@ var velocity = Vector2.ZERO
 
 onready var animator = $AnimationTree.get("parameters/playback")
 
-
+onready var timer = $Timer 
+var cooldown = true 
 var dub_jumps = 0
 var wall_jumps = 0
 var max_num_dub_jumps = 1
@@ -24,6 +25,8 @@ var dir
 
 func _ready():
 	pass
+
+
 
 func upadate_animation(anim):
 	if velocity.x < 0:
@@ -110,9 +113,11 @@ func _physics_process(delta):
 			player_state = state.FALL
 
 	elif velocity.x != 0:
-		if Input.is_action_just_pressed("Down") and is_on_floor():
+		if Input.is_action_just_pressed("Down") and is_on_floor() and cooldown == true:
 			player_state = state.ROLLING
 			print("roll")
+			timer.start()
+			cooldown = false
 		else:
 			print("run")
 			player_state = state.RUNNING
@@ -141,3 +146,8 @@ func _on_HitBox_area_entered(area):
 	
 	
 
+
+
+func _on_Timer_timeout():
+	cooldown = true
+	pass # Replace with function body.

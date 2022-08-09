@@ -8,7 +8,7 @@ func _ready():
 	$Sprite.hide()
 
 
-func _on_Collect_body_entered(body):
+func _on_Collect_body_entered(_body):
 	if found == false:
 		print("get coin")
 		$Sprite.show()
