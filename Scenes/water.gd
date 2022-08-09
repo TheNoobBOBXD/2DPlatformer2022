@@ -14,6 +14,7 @@ func _input(event):
 
 
 func _process(delta):
+	self.global_position.x = GameStats.playerx - 569
 	if move == true:
 		translate(Vector2.UP *0.5 )
 	else:

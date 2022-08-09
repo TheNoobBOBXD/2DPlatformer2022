@@ -25,9 +25,8 @@ var dir
 
 func _ready():
 	pass
-
-
-
+	
+	
 func upadate_animation(anim):
 	if velocity.x < 0:
 		$Sprite.flip_h = true
@@ -52,6 +51,7 @@ func upadate_animation(anim):
 			animator.travel("death")
 
 
+
 func handle_state(player_state,dir):
 	match(player_state):
 		state.STARTJUMP:
@@ -73,22 +73,22 @@ func get_input():
 		velocity.x = move_toward(velocity.x, dir*speed, acceleration)
 	else:
 		velocity.x = move_toward(velocity.x, 0 , friction)
-	
+
+
+
+
 
 func _physics_process(delta):
 	get_input()
+	GameStats.playerx = self.global_position.x
 	if velocity == Vector2.ZERO:
 		player_state = state.IDLE
-		
-	
 	##NEXT SECTION
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		player_state = state.STARTJUMP
 		dub_jumps = max_num_dub_jumps
 		wall_jumps = max_num_wall_jumps
 		print("jump1")
-	
-	
 	elif Input.is_action_just_pressed("jump") and not is_on_floor() and not is_on_wall() and dub_jumps > 0:
 			print("dubjump")
 			dub_jumps = dub_jumps - 1
@@ -130,6 +130,7 @@ func _physics_process(delta):
 	
 
 
+
 func _on_HitBox_area_entered(area):
 	if area.is_in_group("Death"):
 		player_state = state.DEATH
@@ -143,11 +144,8 @@ func _on_HitBox_area_entered(area):
 		velocity.y = 0
 		velocity.x = 0
 		
-	
-	
-
 
 
 func _on_Timer_timeout():
 	cooldown = true
-	pass # Replace with function body.
+	pass

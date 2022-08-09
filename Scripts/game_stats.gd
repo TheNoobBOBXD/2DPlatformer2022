@@ -6,7 +6,7 @@ var current_level = 1
 var timerun = false
 var coin = 0
 var water_pos = 0
-
+var playerx
 
 func reset():
 	current_spawn = null
