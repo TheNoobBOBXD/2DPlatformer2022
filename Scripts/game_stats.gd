@@ -16,7 +16,7 @@ func reset():
 
 
 func waterpos(pos, water_y):
-	water_pos = max(water_y, pos +100)
+	water_pos = max(water_y, pos +200)
 	
 	
 func check_reset():

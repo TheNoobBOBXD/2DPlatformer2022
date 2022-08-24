@@ -35,10 +35,10 @@ script = ExtResource( 18 )
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 192, 0 )
+position = Vector2( 32, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -50,10 +50,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 256, 0 )
+position = Vector2( 96, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -65,10 +65,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 320, 0 )
+position = Vector2( 160, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -80,10 +80,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 384, 0 )
+position = Vector2( 224, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -95,10 +95,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 448, 0 )
+position = Vector2( 288, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -110,10 +110,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 512, 0 )
+position = Vector2( 352, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -125,10 +125,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite10" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 576, 0 )
+position = Vector2( 416, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -140,10 +140,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite11" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 640, 0 )
+position = Vector2( 480, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -155,10 +155,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite12" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 704, 0 )
+position = Vector2( 544, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -170,10 +170,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite13" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 768, 0 )
+position = Vector2( 608, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -185,10 +185,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite14" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 832, 0 )
+position = Vector2( 672, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -200,10 +200,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite15" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 896, 0 )
+position = Vector2( 736, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -215,10 +215,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 960, 0 )
+position = Vector2( 800, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -230,10 +230,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 1024, 0 )
+position = Vector2( 864, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -245,10 +245,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite18" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 1088, 0 )
+position = Vector2( 928, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -260,10 +260,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite19" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 1152, 0 )
+position = Vector2( 992, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -275,10 +275,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite20" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 1216, 0 )
+position = Vector2( 1056, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -290,10 +290,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite21" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 1280, 0 )
+position = Vector2( 1120, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -305,10 +305,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite22" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 1344, 0 )
+position = Vector2( 1184, 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -320,8 +320,8 @@ shape = SubResource( 2 )
 
 [node name="1" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-position = Vector2( 771, 443.5 )
-scale = Vector2( 9.54688, 6.42969 )
+position = Vector2( 693, 445 )
+scale = Vector2( 10.8594, 6.42969 )
 texture = ExtResource( 8 )
 
 [connection signal="body_entered" from="AnimatedSprite4/Area2D" to="." method="_on_Area2D_body_entered"]

@@ -143,6 +143,8 @@ func _on_HitBox_area_entered(area):
 		player_state = state.IDLE 
 		velocity.y = 0
 		velocity.x = 0
+		if area.get_parent().has_method("reset_water"):
+			area.get_parent().reset_water()
 		
 
 

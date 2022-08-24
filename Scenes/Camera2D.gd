@@ -1,6 +1,6 @@
 extends Camera2D
 
-onready var target = owner.get_node("Player2")
+onready var target = get_parent().get_node("Player2")
 var zoomed = false
 var center = Vector2.ZERO
 
@@ -10,10 +10,8 @@ var center = Vector2.ZERO
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.scancode != KEY_ENTER: #basically if any key is pressed, it'll zoom in onto the player
-			target = owner.get_node("Player2")
 			zoomed = true
 		else:
-			target = null
 			zoomed = false
 
 			
