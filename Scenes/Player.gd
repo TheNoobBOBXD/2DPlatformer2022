@@ -15,6 +15,10 @@ var dub_jumps = 0
 var wall_jumps = 0
 var max_num_dub_jumps = 1
 var max_num_wall_jumps = 2
+var lives = 3
+var emit = true
+var death
+
 export (float) var friction = 10
 export (float) var acceleration = 25
 
@@ -132,8 +136,11 @@ func _physics_process(delta):
 
 
 func _on_HitBox_area_entered(area):
-	if area.is_in_group("Death"):
+	if area.is_in_group("Death") and lives>=1:
 		player_state = state.DEATH
+		player_state = state.IDLE 
+		lives = lives - 1
+		print(lives)
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
 			player_state = state.IDLE 
@@ -145,7 +152,9 @@ func _on_HitBox_area_entered(area):
 		velocity.x = 0
 		if area.get_parent().has_method("reset_water"):
 			area.get_parent().reset_water()
-		
+	if lives == 0:
+		print("game over")
+		GameStats.gameover()
 
 
 func _on_Timer_timeout():

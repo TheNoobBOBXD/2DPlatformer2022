@@ -236,6 +236,9 @@ position = Vector2( 752, 276 )
 [node name="SavePoint" parent="." instance=ExtResource( 11 )]
 position = Vector2( 618, 388 )
 
+[node name="SavePoint3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 372, 532 )
+
 [node name="Next_level" parent="." instance=ExtResource( 1 )]
 position = Vector2( 702, 181 )
 

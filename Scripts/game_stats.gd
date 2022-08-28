@@ -14,12 +14,15 @@ func reset():
 	game_start_time = OS.get_ticks_msec()
 	
 
+func gameover():
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
+	
 
 func waterpos(pos, water_y):
 	water_pos = max(water_y, pos +200)
 	
 	
-func check_reset():
+func check_reset(): ##might remove this
 	if current_spawn == null:
 		reset()
 	else:
