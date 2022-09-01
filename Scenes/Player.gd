@@ -154,7 +154,8 @@ func _on_HitBox_area_entered(area):
 			area.get_parent().reset_water()
 	if lives == 0:
 		print("game over")
-		GameStats.gameover()
+		GameStats.gameover() #could make it so it's either water die water drowning
+		#could add gameovercutscene before game over - and if die by spike make bloood
 
 
 func _on_Timer_timeout():

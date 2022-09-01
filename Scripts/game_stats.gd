@@ -7,15 +7,19 @@ var timerun = false
 var coin = 0
 var water_pos = 0
 var playerx
+var pause = false
 
 func reset():
 	current_spawn = null
 	get_tree().reload_current_scene()
 	game_start_time = OS.get_ticks_msec()
+	timerun = false
+	print("stopit")
 	
 
 func gameover():
 	get_tree().change_scene("res://Scenes/GameOver.tscn")
+	timerun = false
 	
 
 func waterpos(pos, water_y):
@@ -36,7 +40,7 @@ func get_spawn():
 
 
 func _input(event):
-	if event is InputEventKey and event.pressed  and timerun == false:
+	if event is InputEventKey and event.pressed and timerun == false:
 		if event.scancode != KEY_ENTER: 
 			timerun = true
 			game_start_time = OS.get_ticks_msec()
