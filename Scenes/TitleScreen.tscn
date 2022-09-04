@@ -70,6 +70,9 @@ texture_normal = ExtResource( 7 )
 texture_hover = ExtResource( 2 )
 
 [node name="TextureButton3" parent="MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 208.0
+margin_right = 300.0
+margin_bottom = 308.0
 
 [node name="Water" parent="." instance=ExtResource( 10 )]
 position = Vector2( -293, 600 )

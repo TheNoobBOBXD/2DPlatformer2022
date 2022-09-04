@@ -27,12 +27,14 @@ func reset_water():
 
 	
 func _physics_process(delta):
+	self.global_position.x = GameStats.playerx - 569
 	if move == true:
-		global_position -= Vector2.DOWN* delta * 50
+		translate(Vector2.UP *0.5 )
+	else:
+		pass
 
 
-
-func _on_Area2D_body_entered(body): #THIS DOESN"T WORK AS IT"S ACTUALLY SINGLE WATER AREA...
+func _on_Area2D_body_entered(body): #works.
 	if body.is_in_group("Player"):
 		print("hi")
 		reset_water()

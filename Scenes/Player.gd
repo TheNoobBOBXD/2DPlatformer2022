@@ -150,8 +150,9 @@ func _on_HitBox_area_entered(area):
 		player_state = state.IDLE 
 		velocity.y = 0
 		velocity.x = 0
-		if area.get_parent().has_method("reset_water"):
+		if area.get_parent().has_method("reset_water"): #need to make it so water resetseven if not water kills
 			area.get_parent().reset_water()
+			print("reset water")
 	if lives == 0:
 		print("game over")
 		GameStats.gameover() #could make it so it's either water die water drowning
