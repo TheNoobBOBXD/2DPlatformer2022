@@ -8,7 +8,7 @@
 size = 25
 font_data = ExtResource( 3 )
 
-[node name="Counter" type="NinePatchRect"]
+[node name="LifeCounter" type="NinePatchRect"]
 margin_right = 92.0
 margin_bottom = 47.0
 texture = ExtResource( 1 )
@@ -24,13 +24,12 @@ margin_top = -19.5
 margin_right = 60.0
 margin_bottom = 23.5
 custom_fonts/font = SubResource( 1 )
-text = "3"
+text = "         3"
 align = 1
 valign = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 43.0
-margin_right = 90.0
-margin_bottom = 46.0
+[node name="TextureRect" type="TextureRect" parent="Label"]
+margin_right = 41.0
+margin_bottom = 45.0
 texture = ExtResource( 2 )
 expand = true

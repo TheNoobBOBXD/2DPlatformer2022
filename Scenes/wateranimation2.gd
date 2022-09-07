@@ -29,7 +29,7 @@ func reset_water():
 func _physics_process(delta):
 	self.global_position.x = GameStats.playerx - 569
 	if move == true:
-		translate(Vector2.UP *0.5 )
+		translate(Vector2.UP *0.38 )
 	else:
 		pass
 
