@@ -92,9 +92,9 @@ func _physics_process(delta):
 		player_state = state.STARTJUMP
 		dub_jumps = max_num_dub_jumps
 		wall_jumps = max_num_wall_jumps
-		print("jump1")
+	
 	elif Input.is_action_just_pressed("jump") and not is_on_floor() and not is_on_wall() and dub_jumps > 0:
-			print("dubjump")
+		
 			dub_jumps = dub_jumps - 1
 			player_state = state.DOUBLEJUMP
 			var c = load("res://Scenes/CloufPuff.tscn").instance()
@@ -105,7 +105,7 @@ func _physics_process(delta):
 			c.emitting = true
 	#NEXT BLOCK
 	elif Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor() and wall_jumps >0:
-		print("jump")
+	
 		wall_jumps = wall_jumps - 1
 		player_state = state.WALLJUMP
 		
@@ -119,12 +119,15 @@ func _physics_process(delta):
 	elif velocity.x != 0:
 		if Input.is_action_just_pressed("Down") and is_on_floor() and cooldown == true:
 			player_state = state.ROLLING
-			print("roll")
+		
 			timer.start()
 			cooldown = false
 		else:
-			print("run")
+	
 			player_state = state.RUNNING
+			
+	else:
+		player_state = state.IDLE
 
 	handle_state(player_state,dir)
 	upadate_animation(player_state)

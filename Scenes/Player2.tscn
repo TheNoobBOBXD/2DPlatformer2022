@@ -3,9 +3,8 @@
 [ext_resource path="res://Sprites/HeckinDoggoPupper.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape2D" id=10]
-radius = 5.25
-height = 1.5
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 4.36396, 4.55075 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -201,8 +200,9 @@ hframes = 15
 frame = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.25, 0 )
-shape = SubResource( 10 )
+position = Vector2( 0, 0.718604 )
+scale = Vector2( 0.916599, 1.03688 )
+shape = SubResource( 38 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../CollisionShape2D")

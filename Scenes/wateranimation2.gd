@@ -18,7 +18,7 @@ func _ready():
 		var w = water.instance()
 		add_child(w)
 		w.position = Vector2(i * size,0)
-	global_position = Vector2(0,720)
+	global_position = Vector2(0,760)
 
 
 func reset_water():

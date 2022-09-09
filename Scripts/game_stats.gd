@@ -15,7 +15,8 @@ func reset():
 	game_start_time = OS.get_ticks_msec()
 	timerun = false
 	print("stopit")
-	
+	print(current_level)
+
 
 func gameover():
 	get_tree().change_scene("res://Scenes/GameOver.tscn")
