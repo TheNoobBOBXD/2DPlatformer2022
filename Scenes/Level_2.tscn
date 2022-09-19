@@ -212,6 +212,14 @@ position = Vector2( 637.778, 365.25 )
 scale = Vector2( 3.32176, 3.32176 )
 texture = ExtResource( 5 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 720
+script = ExtResource( 3 )
+
 [node name="Player2" parent="." groups=["Player"] instance=ExtResource( 12 )]
 position = Vector2( 372, 524 )
 rotation = 3.14159
@@ -270,14 +278,6 @@ __meta__ = {
 }
 
 [node name="Water" parent="." instance=ExtResource( 4 )]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-limit_left = 0
-limit_top = 0
-limit_right = 1280
-limit_bottom = 720
-script = ExtResource( 3 )
 
 [editable path="DoorAndButton"]
 [editable path="SpinningBlade"]

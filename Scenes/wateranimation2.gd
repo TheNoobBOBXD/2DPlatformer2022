@@ -11,21 +11,16 @@ func _input(event):
 			move = true
 		else:
 			move = false
-
-
 func _ready():
 	for i in range(0,100):
 		var w = water.instance()
 		add_child(w)
 		w.position = Vector2(i * size,0)
-	global_position = Vector2(0,760)
-
+	global_position = Vector2(0,888)
 
 func reset_water():
 	position.y = GameStats.water_pos
 
-
-	
 func _physics_process(delta):
 	self.global_position.x = GameStats.playerx - 569
 	if move == true:
@@ -36,6 +31,5 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body): #works.
 	if body.is_in_group("Player"):
-		print("hi")
 		reset_water()
 		
