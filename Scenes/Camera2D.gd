@@ -5,7 +5,6 @@ var zoomed = false
 var center = Vector2.ZERO
 
 
-	
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -28,7 +27,12 @@ func _input(event):
 #		position = center
 		
 func _process(delta):
-	if zoomed == false and GameStats.current_level == 1:
+	if zoomed == false and GameStats.current_level == 0:
+		zoom = Vector2(0.7,0.75)
+		#zoom.move_toward(Vector2(1,1),0.03)
+		position = target.global_position
+		print("zoom")
+	elif zoomed == false and GameStats.current_level == 1:
 		zoom = Vector2(0.75,0.75)
 		#zoom.move_toward(Vector2(1,1),0.03)
 		position = target.global_position

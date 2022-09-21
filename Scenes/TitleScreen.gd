@@ -7,7 +7,7 @@ func _ready():
 
 
 func _on_TextureButton_pressed():
-	get_tree().change_scene("res://Scenes/Level_1.tscn")
+	get_tree().change_scene("res://Scenes/Level_0.tscn")
 
 
 func _on_TextureButton2_pressed():	

@@ -2,7 +2,7 @@ extends Node
 
 onready var game_start_time = OS.get_ticks_msec()
 var current_spawn = null
-var current_level = 1
+var current_level = 0
 var timerun = false
 var coin = 0
 var water_pos = 0
