@@ -271,6 +271,7 @@ custom_fonts/font = SubResource( 24 )
 text = "00:00:00"
 
 [node name="Water" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1, 0 )
 
 [editable path="DoorAndButton"]
 [editable path="SpinningBlade"]

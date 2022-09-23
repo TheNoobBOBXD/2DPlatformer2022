@@ -24,7 +24,7 @@ func gameover():
 	
 
 func waterpos(pos, water_y):
-	water_pos = max(water_y, pos +200)
+	water_pos = max(water_y, pos +250)
 	
 	
 func check_reset(): ##might remove this
