@@ -13,8 +13,8 @@ onready var timer = $Timer
 var cooldown = true 
 var dub_jumps = 0
 var wall_jumps = 0
-var max_num_dub_jumps = 1
-var max_num_wall_jumps = 2
+var max_num_dub_jumps = 2
+var max_num_wall_jumps = 1
 var lives = 3
 var emit = true
 var death
@@ -87,15 +87,18 @@ func _physics_process(delta):
 	GameStats.playerx = self.global_position.x
 	if velocity == Vector2.ZERO:
 		player_state = state.IDLE
+		GameStats.doublejump = GameStats.doublejump_max
 	##NEXT SECTION
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		player_state = state.STARTJUMP
 		dub_jumps = max_num_dub_jumps
+		GameStats.doublejump = GameStats.doublejump_max
 		wall_jumps = max_num_wall_jumps
 	
 	elif Input.is_action_just_pressed("jump") and not is_on_floor() and not is_on_wall() and dub_jumps > 0:
 		
 			dub_jumps = dub_jumps - 1
+			GameStats.change_doublejump(-1)
 			player_state = state.DOUBLEJUMP
 			var c = load("res://Scenes/CloufPuff.tscn").instance()
 			get_parent().add_child(c)
@@ -144,6 +147,7 @@ func _on_HitBox_area_entered(area):
 		player_state = state.IDLE 
 		lives = lives - 1
 		print(lives)
+		GameStats.change_lives(-1)
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
 			player_state = state.IDLE 

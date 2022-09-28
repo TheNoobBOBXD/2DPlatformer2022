@@ -4,10 +4,37 @@ onready var game_start_time = OS.get_ticks_msec()
 var current_spawn = null
 var current_level = 0
 var timerun = false
-var coin = 0
 var water_pos = 0
 var playerx
 var pause = false
+
+var coin = 0
+var lives = 3
+var lives_max = 3
+var doublejump = 0
+var doublejump_max = 2
+
+func change_lives(amount):
+	lives += amount
+	lives = clamp(lives,0,lives_max)
+
+func change_doublejump(amount):
+	doublejump += amount
+	doublejump = clamp(doublejump,0,doublejump_max)
+
+func change_coin(amount):
+	coin += amount
+
+
+func get_coin():
+	return str(coin)
+
+func get_lives():
+	return str(lives)
+
+func get_doublejump():
+	return str(doublejump)
+
 
 func reset():
 	current_spawn = null
