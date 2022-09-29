@@ -10,21 +10,39 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 260.0
-margin_bottom = 84.0
-
-[node name="LifeCounter" parent="HBoxContainer" instance=ExtResource( 2 )]
-margin_right = 84.0
-margin_bottom = 84.0
+[node name="Counter" parent="." instance=ExtResource( 3 )]
+margin_left = 616.0
+margin_top = 240.0
+margin_right = 732.0
+margin_bottom = 324.0
+rect_min_size = Vector2( 0, 84 )
 patch_margin_left = 42
 patch_margin_top = 42
 patch_margin_right = 42
-patch_margin_bottom = 42
+
+[node name="Label" parent="Counter" index="0"]
+margin_left = -576.0
+margin_top = 382.0
+margin_right = -536.0
+margin_bottom = 411.0
+
+[node name="TextureRect" parent="Counter/Label" index="0"]
+margin_left = -24.0
+margin_top = -18.0
+margin_right = 36.0
+margin_bottom = 42.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 435.0
+margin_bottom = 84.0
+
+[node name="LifeCounter" parent="HBoxContainer" instance=ExtResource( 2 )]
+margin_right = 16.0
+margin_bottom = 84.0
 
 [node name="DoubleJumpCounter" parent="HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 88.0
-margin_right = 172.0
+margin_left = 20.0
+margin_right = 104.0
 margin_bottom = 84.0
 patch_margin_left = 42
 patch_margin_top = 42
@@ -32,22 +50,12 @@ patch_margin_right = 42
 patch_margin_bottom = 42
 
 [node name="Label" parent="HBoxContainer/DoubleJumpCounter" index="0"]
+margin_left = 1188.0
+margin_top = -26.0
+margin_right = 1249.0
+margin_bottom = 17.0
 text = "0"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -84.0
-margin_bottom = 84.0
-
-[node name="Counter" parent="HBoxContainer2" instance=ExtResource( 3 )]
-margin_right = 84.0
-margin_bottom = 84.0
-rect_min_size = Vector2( 0, 84 )
-patch_margin_left = 42
-patch_margin_top = 42
-patch_margin_right = 42
-
+[editable path="Counter"]
 [editable path="HBoxContainer/LifeCounter"]
 [editable path="HBoxContainer/DoubleJumpCounter"]
-[editable path="HBoxContainer2/Counter"]

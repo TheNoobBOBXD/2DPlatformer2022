@@ -13,8 +13,6 @@ func _input(event):
 		else:
 			zoomed = false
 
-			
-
 
 #func _process(delta):
 #	if zoomed:
@@ -31,7 +29,6 @@ func _process(delta):
 		zoom = Vector2(0.75,0.75)
 		#zoom.move_toward(Vector2(1,1),0.03)
 		position = target.global_position
-		print("zoom")
 	elif zoomed == false and GameStats.current_level == 1:
 		zoom = Vector2(0.75,0.75)
 		#zoom.move_toward(Vector2(1,1),0.03)
