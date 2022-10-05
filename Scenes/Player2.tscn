@@ -36,10 +36,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 8 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.304572, 0.29883 ) ]
+}
 
 [sub_resource type="Animation" id=29]
 resource_name = "Rolling"
-length = 0.3
+length = 0.4
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Sprite:frame")
@@ -200,7 +212,7 @@ hframes = 15
 frame = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2.89058e-08, 0.661288 )
+position = Vector2( -2.89083e-08, 0.661289 )
 rotation = 1.5708
 scale = Vector2( 1.32, 1.2 )
 shape = SubResource( 38 )
@@ -229,7 +241,7 @@ active = true
 parameters/playback = SubResource( 26 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.123
+wait_time = 1.5
 one_shot = true
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_HitBox_area_entered"]

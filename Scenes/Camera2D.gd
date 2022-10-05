@@ -34,7 +34,7 @@ func _process(delta):
 		#zoom.move_toward(Vector2(1,1),0.03)
 		position = target.global_position
 	elif zoomed == false and GameStats.current_level == 2:
-		zoom = Vector2(1,1)
+		zoom = Vector2(0.9,0.9)
 		#zoom.move_toward(Vector2(1,1),0.03)
 		position = target.global_position
 	else:

@@ -15,7 +15,7 @@ var dub_jumps = 0
 var wall_jumps = 0
 var max_num_dub_jumps = 2
 var max_num_wall_jumps = 1
-var lives = 3
+#var lives = 3
 var emit = true
 var death
 
@@ -28,7 +28,8 @@ onready var player_state = state.IDLE
 var dir
 
 func _ready():
-	pass
+	velocity.y = 0
+	velocity.x = 0
 	
 	
 func upadate_animation(anim):
@@ -61,7 +62,7 @@ func handle_state(player_state,dir):
 		state.DOUBLEJUMP:
 			velocity.y = jump_speed * 1.1
 		state.ROLLING:
-			velocity.x =  dir * acceleration*10
+			velocity.x =  dir * acceleration*18
 		state.WALLJUMP:
 			print("wall jump")
 			velocity.y = jump_speed *0.8
@@ -104,13 +105,13 @@ func _physics_process(delta):
 			c.global_position.y +=5
 			
 			c.emitting = true
-	#NEXT BLOCK
+
 	elif Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor() and wall_jumps >0:
 	
 		wall_jumps = wall_jumps - 1
 		player_state = state.WALLJUMP
 		
-	#NEXT BLOCK
+
 	elif not is_on_floor() and player_state != state.WALLJUMP:
 		if velocity.y < 0:
 			player_state = state.JUMP
@@ -122,6 +123,10 @@ func _physics_process(delta):
 			player_state = state.ROLLING
 			timer.start()
 			cooldown = false
+			var c = load("res://Scenes/Dashpuff.tscn").instance()
+			get_parent().add_child(c)
+			c.global_position = global_position
+			c.global_position.x +=1
 		else:
 	
 			player_state = state.RUNNING
@@ -139,11 +144,11 @@ func _physics_process(delta):
 
 
 func _on_HitBox_area_entered(area):
-	if area.is_in_group("Death") and lives >=1 or lives == 0:
+	if area.is_in_group("Death") and GameStats.lives >=1 or GameStats.lives == 0:
 		player_state = state.DEATH
 		player_state = state.IDLE 
-		lives = lives - 1
-		print(lives)
+#		lives = lives - 1
+#		print(lives)
 		print("firstlives")
 		GameStats.change_lives(-1)
 		print(GameStats.lives)
@@ -159,7 +164,7 @@ func _on_HitBox_area_entered(area):
 		if area.get_parent().has_method("reset_water"): #need to make it so water resetseven if not water kills
 			area.get_parent().reset_water()
 			print("reset water")
-	if lives == 0 and GameStats.lives == 0:
+	if GameStats.lives == 0:
 		print("game over")
 		GameStats.gameover() #could make it so it's either water die water drowning
 		#could add gameovercutscene before game over - and if die by spike make bloood
