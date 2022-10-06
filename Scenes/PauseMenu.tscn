@@ -1,7 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://other/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Control.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/FolderofDownloads/Menu Buttons/Square Buttons/Square Buttons/Pause Square Button.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/FolderofDownloads/Menu Buttons/Large Buttons/Colored Large Buttons/Exit  col_Button.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/FolderofDownloads/Menu Buttons/Large Buttons/Colored Large Buttons/Resume  col_Button.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/FolderofDownloads/Menu Buttons/Large Buttons/Large Buttons/Resume Button.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/FolderofDownloads/Menu Buttons/Large Buttons/Large Buttons/Exit Button.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/FolderofDownloads/Menu Buttons/Large Buttons/Large Buttons/New game Button.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/FolderofDownloads/Menu Buttons/Large Buttons/Colored Large Buttons/New Game  col_Button.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=25]
 size = 38
@@ -25,30 +32,48 @@ margin_right = 1.0
 [node name="Label" type="Label" parent="Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -74.0
+margin_left = -119.0
 margin_top = 228.0
-margin_right = 74.0
+margin_right = 29.0
 margin_bottom = 271.0
 custom_fonts/font = SubResource( 25 )
 text = "Paused"
 
-[node name="Button" type="Button" parent="Panel"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -119.0
-margin_top = 409.0
-margin_right = 119.0
-margin_bottom = 494.0
-text = "Return to menu"
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+margin_left = 678.0
+margin_top = 207.0
+margin_right = 878.0
+margin_bottom = 409.0
+rect_scale = Vector2( 0.385899, 0.414057 )
+texture_normal = ExtResource( 4 )
 
-[node name="Button2" type="Button" parent="Panel"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -119.0
+[node name="NewGame" type="TextureButton" parent="Panel"]
+margin_left = 521.0
+margin_top = 402.0
+margin_right = 561.0
+margin_bottom = 442.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+
+[node name="ResumeButton" type="TextureButton" parent="Panel"]
+margin_left = 521.0
 margin_top = 309.0
-margin_right = 119.0
-margin_bottom = 394.0
-text = "Resume"
+margin_right = 561.0
+margin_bottom = 349.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 6 )
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="Panel/Button2" to="." method="_on_Button2_pressed"]
+[node name="Exit" type="TextureButton" parent="Panel"]
+margin_left = 521.0
+margin_top = 503.0
+margin_right = 1121.0
+margin_bottom = 703.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 5 )
+
+[connection signal="pressed" from="Panel/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Panel/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="Panel/Exit" to="." method="_on_Exit_pressed"]

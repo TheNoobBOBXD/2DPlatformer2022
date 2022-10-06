@@ -17,6 +17,7 @@ func _on_Collect_body_entered(_body):
 		$AnimatedSprite.hide()
 		$Sprite.hide()
 		found = true
+		GameStats.change_coin(+1)
 	else:
 		pass
 	

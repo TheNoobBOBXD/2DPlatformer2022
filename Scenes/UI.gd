@@ -5,8 +5,8 @@ func _ready():
 	$HBoxContainer/LifeCounter/Label/TextureRect1.show()
 	$HBoxContainer/LifeCounter/Label/TextureRect2.show()
 	$HBoxContainer/LifeCounter/Label/TextureRect3.show()
-	$Counter/Label/TextureRect.hide()
-	$Counter/Label.hide()
+	$HBoxContainer/Counter/Label/TextureRect.hide()
+	$HBoxContainer/Counter/Label.hide()
 
 func _process(delta):
 	$HBoxContainer/DoubleJumpCounter/Label.text = "x " + GameStats.get_doublejump()
@@ -17,5 +17,6 @@ func _process(delta):
 		$HBoxContainer/LifeCounter/Label/TextureRect2.hide()
 		$HBoxContainer/LifeCounter/Label/TextureRect3.hide()
 	if GameStats.coin == 1:
-		$HBoxContainer2/Counter/Label/TextureRect.hide()
+		$HBoxContainer/Counter/Label/TextureRect.show()
+		
 

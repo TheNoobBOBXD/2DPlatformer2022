@@ -2,7 +2,7 @@ extends Node
 
 
 func _ready():
-	pass
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 
 func _on_TextureButton_pressed():
@@ -10,7 +10,6 @@ func _on_TextureButton_pressed():
 	GameStats.lives = 3
 	GameStats.current_level = 0
 	GameStats.coin = 0
-
 
 
 

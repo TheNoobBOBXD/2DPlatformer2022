@@ -62,7 +62,7 @@ func handle_state(player_state,dir):
 		state.DOUBLEJUMP:
 			velocity.y = jump_speed * 1.1
 		state.ROLLING:
-			velocity.x =  dir * acceleration*18
+			velocity.x =  dir * acceleration*15
 		state.WALLJUMP:
 			print("wall jump")
 			velocity.y = jump_speed *0.8

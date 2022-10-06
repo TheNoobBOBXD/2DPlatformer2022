@@ -16,17 +16,23 @@ func _process(delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
-func _on_Button_pressed():
+func _on_ResumeButton_pressed():
 	get_tree().paused = false
 	notpaused = true
 	visible = false
-	get_tree().change_scene("res://Scenes/TitleScreen.tscn")
+
+
+func _on_Exit_pressed():
+	get_tree().quit()
+
+
+func _on_NewGame_pressed():
+	get_tree().paused = false
+	notpaused = true
+	visible = false
+	get_tree().change_scene("res://Scenes/Level_0.tscn")
 	GameStats.lives = 3
 	GameStats.current_level = 0
 	GameStats.coin = 0
+	GameStats.reset()
 
-
-func _on_Button2_pressed():
-	get_tree().paused = false
-	notpaused = true
-	visible = false

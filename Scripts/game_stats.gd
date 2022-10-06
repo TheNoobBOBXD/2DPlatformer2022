@@ -13,6 +13,7 @@ var lives = 3
 var lives_max = 3
 var doublejump = 0
 var doublejump_max = 2
+var coin_max = 3
 
 func change_lives(amount):
 	lives += amount
@@ -24,7 +25,8 @@ func change_doublejump(amount):
 
 func change_coin(amount):
 	coin += amount
-
+	coin = clamp(coin,0,coin_max)
+	print(coin)
 
 func get_coin():
 	return str(coin)
@@ -38,7 +40,7 @@ func get_doublejump():
 
 func reset():
 	current_spawn = null
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
 	game_start_time = OS.get_ticks_msec()
 	timerun = false
 	print("stopit")

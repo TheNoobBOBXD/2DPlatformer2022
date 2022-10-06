@@ -21,10 +21,6 @@
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=20]
 
-[sub_resource type="DynamicFont" id=24]
-size = 20
-font_data = ExtResource( 9 )
-
 [sub_resource type="ConvexPolygonShape2D" id=22]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
@@ -213,6 +209,10 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 0/z_index = 0
 
+[sub_resource type="DynamicFont" id=24]
+size = 20
+font_data = ExtResource( 9 )
+
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
 
@@ -323,38 +323,6 @@ position = Vector2( 760, 252 )
 [node name="SavePoint3" parent="." instance=ExtResource( 11 )]
 position = Vector2( 346, 268 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 0
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 20 )]
-visible = false
-margin_left = 0.0
-margin_right = 0.0
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 1.0
-margin_right = 1.0
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Label" type="Label" parent="CanvasLayer/Control"]
-margin_left = 570.0
-margin_top = 9.0
-margin_right = 634.0
-margin_bottom = 35.0
-custom_fonts/font = SubResource( 24 )
-text = "00:00:00"
-
-[node name="UI" parent="CanvasLayer/Control" instance=ExtResource( 19 )]
-margin_left = -1.0
-margin_right = -1.0
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Player2" parent="." groups=["Player"] instance=ExtResource( 12 )]
 position = Vector2( 121, 623 )
 scale = Vector2( -1.1, 1.2 )
@@ -386,6 +354,37 @@ tile_data = PoolIntArray( -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -196592, 
 [node name="Water" parent="." instance=ExtResource( 14 )]
 position = Vector2( 784, 419 )
 scale = Vector2( 0.75, 0.75 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+margin_left = 570.0
+margin_top = 9.0
+margin_right = 634.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 24 )
+text = "00:00:00"
+
+[node name="UI" parent="CanvasLayer/Control" instance=ExtResource( 19 )]
+margin_left = -1.0
+margin_right = -1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 20 )]
+visible = false
+margin_left = 0.0
+margin_right = 0.0
 
 [editable path="DoorAndButton"]
 [editable path="SpinningBlade"]
