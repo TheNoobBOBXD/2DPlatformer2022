@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/DoorAndButton.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/strange_door_closed_anim_strip_10.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/strange_door_opening_anim_strip_14.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/buttom.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/buttom_pressed.png" type="Texture" id=5]
+[ext_resource path="res://other/soundsandmusic/sounds/switch23.ogg" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=6]
 resource_name = "DoorClosed"
@@ -323,5 +324,8 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Door"]
 position = Vector2( 1, 0 )
 shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="body_entered" from="Button/Area2D" to="." method="_on_Area2D_body_entered"]

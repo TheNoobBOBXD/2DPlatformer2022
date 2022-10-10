@@ -17,6 +17,7 @@ func _process(delta):
 
 func _on_SavePoint_body_entered(body):
 	if body.is_in_group("Player"):
+		$AudioStreamPlayer.play()
 		GameStats.set_spawn(self)
 		$AnimationPlayer.play("saved")
 		print("nerd")

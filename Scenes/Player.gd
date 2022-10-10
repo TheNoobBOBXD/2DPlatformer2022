@@ -94,6 +94,7 @@ func _physics_process(delta):
 		dub_jumps = max_num_dub_jumps
 		GameStats.doublejump = GameStats.doublejump_max
 		wall_jumps = max_num_wall_jumps
+		$JumpSound.play()
 	
 	elif Input.is_action_just_pressed("jump") and not is_on_floor() and not is_on_wall() and not is_on_ceiling() and dub_jumps > 0:
 			dub_jumps = dub_jumps - 1
@@ -103,11 +104,12 @@ func _physics_process(delta):
 			get_parent().add_child(c)
 			c.global_position = global_position
 			c.global_position.y +=5
-			
+			$DoubleSound.play()
 			c.emitting = true
+			
 
 	elif Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor() and wall_jumps >0:
-	
+		$DoubleSound2.play()
 		wall_jumps = wall_jumps - 1
 		player_state = state.WALLJUMP
 		
@@ -121,6 +123,7 @@ func _physics_process(delta):
 	elif velocity.x != 0:
 		if Input.is_action_just_pressed("Down") and is_on_floor() and cooldown == true:
 			player_state = state.ROLLING
+			$Slide.play()
 			timer.start()
 			cooldown = false
 			var c = load("res://Scenes/Dashpuff.tscn").instance()
@@ -152,6 +155,7 @@ func _on_HitBox_area_entered(area):
 		print("firstlives")
 		GameStats.change_lives(-1)
 		print(GameStats.lives)
+		$DeathSound.play()
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
 			player_state = state.IDLE 

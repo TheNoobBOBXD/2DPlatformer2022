@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://other/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Control.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/MusicController.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/FolderofDownloads/Menu Buttons/Square Buttons/Square Buttons/Pause Square Button.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/FolderofDownloads/Menu Buttons/Large Buttons/Colored Large Buttons/Exit  col_Button.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/FolderofDownloads/Menu Buttons/Large Buttons/Colored Large Buttons/Resume  col_Button.png" type="Texture" id=6]
@@ -73,6 +74,10 @@ margin_bottom = 703.0
 rect_scale = Vector2( 0.4, 0.4 )
 texture_normal = ExtResource( 8 )
 texture_hover = ExtResource( 5 )
+
+[node name="MusicSquareButton" parent="Panel" instance=ExtResource( 3 )]
+position = Vector2( 573, 633 )
+scale = Vector2( 0.480355, 0.3689 )
 
 [connection signal="pressed" from="Panel/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="Panel/ResumeButton" to="." method="_on_ResumeButton_pressed"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://other/soundsandmusic/y2mate.com - NhanTV  Excitement Official Release.mp3" type="AudioStream" id=1]
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -2.0
+pitch_scale = 0.8
+autoplay = true

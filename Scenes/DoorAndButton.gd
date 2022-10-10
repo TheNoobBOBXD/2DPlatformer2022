@@ -13,6 +13,7 @@ func _on_Area2D_body_entered(body):
 		print("open")
 		$ButtonAnimationPlayer.play("ButtonDown")
 		$AnimationPlayer.play("DoorOpen")
+		$AudioStreamPlayer2D.play()
 		doorclosed = false
 #		yield($AnimationPlayer,"animation_finished")
 	if body.is_in_group("Player") and doorclosed == false:

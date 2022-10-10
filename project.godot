@@ -16,6 +16,7 @@ run/main_scene="res://Scenes/TitleScreen.tscn"
 [autoload]
 
 GameStats="*res://Scripts/game_stats.gd"
+MainMusic="*res://Scenes/MainMusic.tscn"
 
 [display]
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/y2mate.com - NhanTV  Excitement Official Release.mp3-08c5573bda69e6da66669eb3f0018c58.mp3str"
+
+[deps]
+
+source_file="res://other/soundsandmusic/y2mate.com - NhanTV  Excitement Official Release.mp3"
+dest_files=[ "res://.import/y2mate.com - NhanTV  Excitement Official Release.mp3-08c5573bda69e6da66669eb3f0018c58.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
