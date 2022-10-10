@@ -25,20 +25,20 @@ func reset_water():
 
 func _physics_process(delta):
 	if GameStats.current_level == 0:
-		self.global_position.x = GameStats.playerx - 600
+		self.global_position.x = GameStats.playerx - 650
 		water_speed = 0.35
 	elif GameStats.current_level == 1:
-		self.global_position.x = GameStats.playerx - 569
+		self.global_position.x = GameStats.playerx - 600
 		water_speed = 0.4
 	elif GameStats.current_level == 2:
-		self.global_position.x = GameStats.playerx - 569
+		self.global_position.x = GameStats.playerx - 600
 		water_speed = 0.425
 	elif GameStats.current_level == 3:
 		self.global_position.x = GameStats.playerx - 569
 		water_speed = 0.45
 	elif GameStats.current_level == 4:
 		self.global_position.x = GameStats.playerx - 569
-		water_speed = 1
+		water_speed = 10
 	else:
 		pass
 	if move == true:

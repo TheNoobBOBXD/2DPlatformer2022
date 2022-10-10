@@ -28,10 +28,12 @@ patch_margin_right = 42
 patch_margin_bottom = 42
 
 [node name="Label" parent="HBoxContainer/DoubleJumpCounter" index="0"]
-margin_left = 1196.0
-margin_top = -19.0
-margin_right = 1257.0
-margin_bottom = 24.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -22.0
+margin_top = 54.0
+margin_right = 39.0
+margin_bottom = 97.0
 text = "0"
 
 [node name="Counter" parent="HBoxContainer" instance=ExtResource( 3 )]

@@ -20,6 +20,7 @@ func _on_ResumeButton_pressed():
 	get_tree().paused = false
 	notpaused = true
 	visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _on_Exit_pressed():
@@ -30,6 +31,7 @@ func _on_NewGame_pressed():
 	get_tree().paused = false
 	notpaused = true
 	visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().change_scene("res://Scenes/Level_0.tscn")
 	GameStats.lives = 3
 	GameStats.current_level = 0
