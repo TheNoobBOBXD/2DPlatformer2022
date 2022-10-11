@@ -150,8 +150,6 @@ func _on_HitBox_area_entered(area):
 	if area.is_in_group("Death") and GameStats.lives >=1 or GameStats.lives == 0:
 		player_state = state.DEATH
 		player_state = state.IDLE 
-#		lives = lives - 1
-#		print(lives)
 		print("firstlives")
 		GameStats.change_lives(-1)
 		print(GameStats.lives)

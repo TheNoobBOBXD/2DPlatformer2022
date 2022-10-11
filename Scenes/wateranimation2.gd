@@ -38,7 +38,7 @@ func _physics_process(delta):
 		water_speed = 0.24
 	elif GameStats.current_level == 4:
 		self.global_position.x = GameStats.playerx - 569
-		water_speed = 10
+		water_speed = 1
 	else:
 		pass
 	if move == true:
