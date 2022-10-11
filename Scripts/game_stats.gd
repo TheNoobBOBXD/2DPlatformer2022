@@ -13,7 +13,7 @@ var lives = 3
 var lives_max = 3
 var doublejump = 0
 var doublejump_max = 2
-var coin_max = 3
+var coin_max = 1000
 
 func _ready():
 	preload("res://Scenes/MainMusic.tscn")

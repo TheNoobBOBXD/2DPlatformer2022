@@ -79,7 +79,7 @@ margin_left = 498.0
 margin_top = 474.0
 margin_right = 782.0
 margin_bottom = 555.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.0627451, 0.0627451, 0.0627451, 1 )
 
 [node name="MusicSquareButton" parent="." instance=ExtResource( 2 )]
 

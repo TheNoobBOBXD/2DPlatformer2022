@@ -17,7 +17,8 @@ func _on_Collect_body_entered(_body):
 		$AnimatedSprite.hide()
 		$Sprite.hide()
 		found = true
-		GameStats.change_coin(+1)
+		$AudioStreamPlayer.play()
+		GameStats.change_coin(+3)
 	else:
 		pass
 	
@@ -26,6 +27,7 @@ func _on_Collect_body_entered(_body):
 func _on_Enter_body_entered(body):
 	if body.is_in_group("Player") and found == false:
 		print("enter")
+
 		$AnimatedSprite.show()
 		$AnimatedSprite.play()
 	else:
