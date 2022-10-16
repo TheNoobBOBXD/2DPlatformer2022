@@ -14,11 +14,13 @@ var lives_max = 3
 var doublejump = 0
 var doublejump_max = 2
 var coin_max = 1000
-
+var end_game_time = ""
 func _ready():
 	preload("res://Scenes/MainMusic.tscn")
 	
-	
+func game_end():
+	end_game_time = get_time()
+
 func change_lives(amount):
 	lives += amount
 	lives = clamp(lives,0,lives_max)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Sprites/FolderofDownloads/Menu Buttons/Large Buttons/Large Buttons/New game Button.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/gameoverwater.tscn" type="PackedScene" id=2]
@@ -8,7 +8,16 @@
 [ext_resource path="res://buttons/ExitButtono.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Counter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://other/backgroubd.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/GameOver.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/EndGame.gd" type="Script" id=9]
+[ext_resource path="res://other/Comfortaa-Bold.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 10 )
 
 [node name="EndGame" type="Node"]
 script = ExtResource( 9 )
@@ -19,40 +28,58 @@ texture = ExtResource( 8 )
 centered = false
 
 [node name="Water" parent="." instance=ExtResource( 2 )]
-position = Vector2( -272, 648 )
+position = Vector2( -269, 668 )
 script = null
-
-[node name="TextureButton" type="TextureButton" parent="."]
-anchor_left = 0.471
-anchor_top = 0.67
-anchor_right = 0.471
-anchor_bottom = 0.67
-margin_left = -322.88
-margin_top = -114.4
-margin_right = 277.12
-margin_bottom = 85.6
-rect_scale = Vector2( 0.501453, 0.501453 )
-texture_normal = ExtResource( 1 )
-texture_hover = ExtResource( 4 )
-
-[node name="TextureButton3" type="TextureButton" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -360.0
-margin_top = 504.0
-margin_right = -60.0
-margin_bottom = 604.0
-texture_normal = ExtResource( 6 )
-texture_hover = ExtResource( 5 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -464.0
-margin_top = 40.0
-margin_right = 478.0
-margin_bottom = 317.0
+margin_left = -472.0
+margin_top = 13.0
+margin_right = 470.0
+margin_bottom = 290.0
 texture = ExtResource( 3 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer2/Control"]
+margin_left = 828.0
+margin_top = 559.0
+margin_right = 959.0
+margin_bottom = 605.0
+custom_fonts/font = SubResource( 1 )
+text = "0:00:00"
+
+[node name="Control2" type="Control" parent="CanvasLayer2"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer2/Control2"]
+anchor_left = 0.471
+anchor_top = 0.67
+anchor_right = 0.471
+anchor_bottom = 0.67
+margin_left = 261.16
+margin_top = 314.2
+margin_right = 861.16
+margin_bottom = 514.2
+rect_scale = Vector2( 0.501453, 0.501453 )
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 4 )
+
+[node name="TextureButton3" type="TextureButton" parent="CanvasLayer2/Control2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 262.0
+margin_top = 521.0
+margin_right = 562.0
+margin_bottom = 621.0
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 5 )
 
 [node name="Counter" parent="." instance=ExtResource( 7 )]
 margin_left = 280.0
@@ -62,18 +89,27 @@ margin_bottom = 523.0
 texture = null
 
 [node name="Label" parent="Counter" index="0"]
-margin_left = 360.0
-margin_top = -139.5
-margin_right = 476.0
-margin_bottom = -40.5
+margin_left = 372.0
+margin_top = -209.5
+margin_right = 738.0
+margin_bottom = -110.5
+text = "a"
 
 [node name="TextureRect" parent="Counter" index="1"]
-margin_left = 504.0
-margin_top = -159.0
-margin_right = 678.0
-margin_bottom = 11.0
+margin_left = 472.0
+margin_top = -99.0
+margin_right = 646.0
+margin_bottom = 71.0
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="TextureButton3" to="." method="_on_TextureButton3_pressed"]
+[node name="Label" type="Label" parent="."]
+margin_left = 693.0
+margin_top = 557.0
+margin_right = 802.0
+margin_bottom = 603.0
+custom_fonts/font = SubResource( 2 )
+text = "Time:"
+
+[connection signal="pressed" from="CanvasLayer2/Control2/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Control2/TextureButton3" to="." method="_on_TextureButton3_pressed"]
 
 [editable path="Counter"]

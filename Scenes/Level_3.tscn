@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Scenes/Next_level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TileMap0.tscn" type="PackedScene" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://Scenes/FastSwingingTrap.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Scenes/specialcoin.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Scenes/coin.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Trampoline.tscn" type="PackedScene" id=29]
 
 [sub_resource type="Curve2D" id=49]
 _data = {
@@ -774,6 +775,18 @@ anims/spin = SubResource( 28 )
 position = Vector2( 564, 613 )
 rotation = -3.14159
 scale = Vector2( 1.1, -1.2 )
+
+[node name="Trampoline" parent="." instance=ExtResource( 29 )]
+position = Vector2( 365, 613 )
+
+[node name="Trampoline2" parent="." instance=ExtResource( 29 )]
+position = Vector2( 722, 357 )
+
+[node name="Trampoline3" parent="." instance=ExtResource( 29 )]
+position = Vector2( 277, 181 )
+
+[node name="Trampoline4" parent="." instance=ExtResource( 29 )]
+position = Vector2( 1159, 486 )
 
 [node name="Area2D" parent="." instance=ExtResource( 16 )]
 position = Vector2( 72, 612 )
