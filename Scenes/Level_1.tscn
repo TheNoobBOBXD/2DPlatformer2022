@@ -337,7 +337,7 @@ position = Vector2( 425, 416 )
 rotation = 3.14159
 
 [node name="SpikeTrap16" parent="." instance=ExtResource( 6 )]
-position = Vector2( 363, 223 )
+position = Vector2( 433, 222 )
 rotation = 3.14159
 
 [node name="SpikeTrap17" parent="." instance=ExtResource( 6 )]
