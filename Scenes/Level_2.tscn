@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scenes/Next_level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TileMap0.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Scenes/SwingingTrap.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/specialcoin.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/coin.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/FastSwingingTrap.tscn" type="PackedScene" id=21]
 
 [sub_resource type="Animation" id=25]
 length = 0.001
@@ -184,11 +185,11 @@ position = Vector2( 121, 539 )
 anims/RESET = SubResource( 25 )
 anims/spin = SubResource( 26 )
 
-[node name="SwingingTrap" parent="." instance=ExtResource( 18 )]
-position = Vector2( 690, 255 )
+[node name="FastSwingingTrap" parent="." instance=ExtResource( 21 )]
+position = Vector2( 500, 382 )
 
-[node name="SwingingTrap2" parent="." instance=ExtResource( 18 )]
-position = Vector2( 473, 382 )
+[node name="FastSwingingTrap2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 674, 270 )
 
 [node name="SwingingTrap3" parent="." instance=ExtResource( 18 )]
 position = Vector2( 567, 541 )
@@ -312,7 +313,7 @@ position = Vector2( 392, 231 )
 position = Vector2( 388, 277 )
 
 [node name="AnimatedSprite" parent="SpecialCoin" index="1"]
-frame = 12
+frame = 4
 
 [node name="CollisionShape2D" parent="SpecialCoin/Enter" index="0"]
 position = Vector2( -249.999, 95.0002 )
